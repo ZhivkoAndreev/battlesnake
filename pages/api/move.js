@@ -65,10 +65,10 @@ export default function handler(req, res) {
     if (myHead.x === e.x + 1) {
       return isMoveSafe.left = false
     }
-    if (myHead.x === e.y - 1) {
+    if (myHead.y === e.y - 1) {
       return isMoveSafe.up = false
     }
-    if (myHead.x === e.y + 1) {
+    if (myHead.y === e.y + 1) {
       return isMoveSafe.down = false
     }
    })
