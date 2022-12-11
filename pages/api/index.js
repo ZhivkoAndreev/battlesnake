@@ -4,10 +4,10 @@ export default function handler(req, res) {
 
   const snakeInfo = {
     apiversion: "1",
-    author: "Jay", //Username for play.battlesnake
+    author: "Jay69", //Username for play.battlesnake
     color: "#006600",
-    head: "default",
-    tail: "default",
+    head: "tiger-king",
+    tail: "tiger-tail",
   };
 
   res.json(snakeInfo);
