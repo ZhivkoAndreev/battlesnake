@@ -42,6 +42,8 @@ export default function handler(req, res) {
   // boardWidth = gameState.board.width;
   // boardHeight = gameState.board.height;
 
+  const moves = ["up","down","left","right"];
+
   // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
   // myBody = gameState.you.body;
 
