@@ -43,16 +43,16 @@ export default function handler(req, res) {
   const boardHeight = gameState.board.height;
 
   if (myHead.y === 0) {
-    possibleMoves.down = false
+    isMoveSafe.down = false
   }
   if (myHead.x === 0) {
-    possibleMoves.left = false
+    isMoveSafe.left = false
   }
   if (myHead.y === boardHeight - 1) {
-    possibleMoves.up = false
+    isMoveSafe.up = false
   }
   if (myHead.y === boardWidth - 1) {
-    possibleMoves.right = false
+    isMoveSafe.right = false
   }
 
   // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
