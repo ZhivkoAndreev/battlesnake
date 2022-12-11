@@ -42,16 +42,19 @@ export default function handler(req, res) {
   const boardWidth = gameState.board.width;
   const boardHeight = gameState.board.height;
 
-  if (myHead.y === 0) {
+
+  const kek = gameState.you.head;
+
+  if (kek.y === 0) {
     possibleMoves.down = false
   }
-  if (myHead.x === 0) {
+  if (kek.x === 0) {
     possibleMoves.left = false
   }
-  if (myHead.y === boardHeight - 1) {
+  if (kek.y === boardHeight - 1) {
     possibleMoves.up = false
   }
-  if (myHead.x === boardWidth - 1) {
+  if (kek.x === boardWidth - 1) {
     possibleMoves.right = false
   }
 
