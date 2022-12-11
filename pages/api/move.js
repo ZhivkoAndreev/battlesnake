@@ -51,7 +51,7 @@ export default function handler(req, res) {
   if (myHead.y === boardHeight - 1) {
     possibleMoves.up = false
   }
-  if (myHead.y === boardWidth - 1) {
+  if (myHead.x === boardWidth - 1) {
     possibleMoves.right = false
   }
 
