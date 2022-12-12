@@ -58,23 +58,38 @@ export default function handler(req, res) {
   // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
    const myBody = gameState.you.body;
 
-   myBody.map((e)=>{
-    if (myHead.x === e.x - 1 && myHead.y === e.y) {
+   myBody.map((body)=>{
+    if (myHead.x === body.x - 1 && myHead.y === body.y) {
       return isMoveSafe.right = false
     }
-    if (myHead.x === e.x + 1 && myHead.y === e.y) {
+    if (myHead.x === body.x + 1 && myHead.y === body.y) {
       return isMoveSafe.left = false
     }
-    if (myHead.y === e.y - 1 && myHead.x === e.x) {
+    if (myHead.y === body.y - 1 && myHead.x === body.x) {
       return isMoveSafe.up = false
     }
-    if (myHead.y === e.y + 1 && myHead.x === e.x) {
+    if (myHead.y === body.y + 1 && myHead.x === body.x) {
       return isMoveSafe.down = false
     }
    })
 
   // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
-  // opponents = gameState.board.snakes;
+  const opponents = gameState.board.snakes;
+  
+  opponents.map((opponent)=>{
+    if (myHead.x === opponent.x - 1 && myHead.y === opponent.y) {
+      return isMoveSafe.right = false
+    }
+    if (myHead.x === opponent.x + 1 && myHead.y === opponent.y) {
+      return isMoveSafe.left = false
+    }
+    if (myHead.y === opponent.y - 1 && myHead.x === opponent.x) {
+      return isMoveSafe.up = false
+    }
+    if (myHead.y === opponent.y + 1 && myHead.x === opponent.x) {
+      return isMoveSafe.down = false
+    }
+   })
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
