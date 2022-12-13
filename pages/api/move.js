@@ -59,16 +59,16 @@ export default function handler(req, res) {
    const myBody = gameState.you.body;
 
    myBody.map((body)=>{
-    if (myHead.x === body.x && myHead.y === body.y) {
+    if (myHead.x === body.x - 1 && myHead.y === body.y) {
       return isMoveSafe.right = false
     }
-    if (myHead.x === body.x && myHead.y === body.y) {
+    if (myHead.x === body.x + 1 && myHead.y === body.y) {
       return isMoveSafe.left = false
     }
-    if (myHead.y === body.y && myHead.x === body.x) {
+    if (myHead.y === body.y - 1 && myHead.x === body.x) {
       return isMoveSafe.up = false
     }
-    if (myHead.y === body.y && myHead.x === body.x) {
+    if (myHead.y === body.y + 1 && myHead.x === body.x) {
       return isMoveSafe.down = false
     }
    })
