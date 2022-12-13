@@ -58,18 +58,18 @@ export default function handler(req, res) {
   // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
    const myBody = gameState.you.body;
 
-   myBody.map((body)=>{
+   myBody.forEach((body)=>{
     if (myHead.x === body.x - 1 ) {
-      return isMoveSafe.right = false
+       isMoveSafe.right = false
     }
     if (myHead.x === body.x + 1 ) {
-      return isMoveSafe.left = false
+       isMoveSafe.left = false
     }
     if (myHead.y === body.y - 1) {
-      return isMoveSafe.up = false
+       isMoveSafe.up = false
     }
     if (myHead.y === body.y + 1) {
-      return isMoveSafe.down = false
+       isMoveSafe.down = false
     }
    })
 
@@ -77,57 +77,59 @@ export default function handler(req, res) {
   const opponents = gameState.board.snakes;
 
   opponents.map((snakes)=>{
-      return snakes.body.map((body) => {    
+      return snakes.body.forEach((body) => {    
         if (myHead.x === body.x - 1 ) {
-          return isMoveSafe.right = false
+           isMoveSafe.right = false
         }
         if (myHead.x === body.x + 1 ) {
-          return isMoveSafe.left = false
+           isMoveSafe.left = false
         }
         if (myHead.y === body.y - 1) {
-          return isMoveSafe.up = false
+           isMoveSafe.up = false
         }
         if (myHead.y === body.y + 1) {
-          return isMoveSafe.down = false
+           isMoveSafe.down = false
         }
       })
    })
 
-  // Find food 
+  // // Find food 
 
-  const foods = gameState.board.food
+  // const foods = gameState.board.food
 
-  foods.map((food) => {
-    if (myHead.x === food.x - 1 ) {
-      return isMoveSafe.right = true
-    }
-    if (myHead.x === food.x + 1 ) {
-      return isMoveSafe.left = true
-    }
-    if (myHead.y === food.y - 1) {
-      return isMoveSafe.up = true
-    }
-    if (myHead.y === food.y + 1) {
-      return isMoveSafe.down = true
-    }
-  })
+  // foods.map((food) => {
+  //   if (myHead.x === food.x - 1 ) {
+  //     return isMoveSafe.right = true
+  //   }
+  //   if (myHead.x === food.x + 1 ) {
+  //     return isMoveSafe.left = true
+  //   }
+  //   if (myHead.y === food.y - 1) {
+  //     return isMoveSafe.up = true
+  //   }
+  //   if (myHead.y === food.y + 1) {
+  //     return isMoveSafe.down = true
+  //   }
+  // })
 
 
-  const findFood = (arr, headPos) => {
+  // const findFood = (arr, headPos) => {
 
-    let closestFood = 500;
+  //   let closestFood = 500;
+  //   let targetFood = undefined;
 
-    for ( let food of arr) {
-      let d = Math.abs(headPos.x - food.x) + Math.abs(headPos.y - food.y)
-     if (d < closestFood) {
-      closestFood = d
-     }
-    }
-   return closestFood;
-  }
+  //   for ( let food of arr) {
+  //     let d = Math.abs(headPos.x - food.x) + Math.abs(headPos.y - food.y)
+  //    if (d < closestFood) {
+  //     closestFood = d
+  //     targetFood = food
+  //    }
+  //   }
+  //  return targetFood;
+  // }
 
-  findFood(foods, myHead);
-  console.log(findFood(foods, myHead))
+  // findFood(foods, myHead);
+  // console.log(findFood(foods, myHead))
 
 
   // Are there any safe moves left?
