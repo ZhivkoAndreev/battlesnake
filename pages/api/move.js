@@ -117,7 +117,7 @@ export default function handler(req, res) {
 
     let closestFood = 500;
 
-    for(food in arr) {
+    for ( let food of arr) {
       let d = Math.abs(headPos.x - food.x) + Math.abs(headPos.y - food.y)
      if (d < closestFood) {
       closestFood = d
@@ -127,6 +127,8 @@ export default function handler(req, res) {
   }
 
   findFood(foods, myHead);
+  console.log(findFood(foods, myHead))
+
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
