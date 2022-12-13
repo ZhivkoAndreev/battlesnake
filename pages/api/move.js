@@ -93,6 +93,25 @@ export default function handler(req, res) {
       })
    })
 
+  // Find food 
+
+  const foods = gameState.board.food
+
+  foods.map((food) => {
+    if (myHead.x === food.x - 1 ) {
+      return isMoveSafe.right = true
+    }
+    if (myHead.x === food.x + 1 ) {
+      return isMoveSafe.left = true
+    }
+    if (myHead.y === food.y - 1) {
+      return isMoveSafe.up = true
+    }
+    if (myHead.y === food.y + 1) {
+      return isMoveSafe.down = true
+    }
+  })
+
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
   if (safeMoves.length == 0) {
