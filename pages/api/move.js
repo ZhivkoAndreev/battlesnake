@@ -97,36 +97,36 @@ export default function handler(req, res) {
 
   const foods = gameState.board.food
 
-  // foods.map((food) => {
-  //   if (myHead.x === food.x - 1 ) {
-  //     return isMoveSafe.right = true
-  //   }
-  //   if (myHead.x === food.x + 1 ) {
-  //     return isMoveSafe.left = true
-  //   }
-  //   if (myHead.y === food.y - 1) {
-  //     return isMoveSafe.up = true
-  //   }
-  //   if (myHead.y === food.y + 1) {
-  //     return isMoveSafe.down = true
-  //   }
-  // })
+  foods.map((food) => {
+    if (myHead.x === food.x - 1 ) {
+      return isMoveSafe.right = true
+    }
+    if (myHead.x === food.x + 1 ) {
+      return isMoveSafe.left = true
+    }
+    if (myHead.y === food.y - 1) {
+      return isMoveSafe.up = true
+    }
+    if (myHead.y === food.y + 1) {
+      return isMoveSafe.down = true
+    }
+  })
 
-  function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(lat2-lat1);  // deg2rad below
-    var dLon = deg2rad(lon2-lon1); 
-    var a = 
-      Math.sin(dLat/2) * Math.sin(dLat/2) +
-      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-      Math.sin(dLon/2) * Math.sin(dLon/2)
-      ; 
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-    var d = R * c; // Distance in km
-    return d;
+
+  const findFood = (arr, headPos) => {
+
+    let closestFood = 500;
+
+    for(food in arr) {
+      let d = Math.abs(headPos.x - food.x) + Math.abs(headPos.y - food.y)
+     if (d < closestFood) {
+      closestFood = d
+     }
+    }
+   return closestFood;
   }
 
-  console.log((getDistanceFromLatLonInKm(5,6,7,8)))
+  findFood(foods, myHead);
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key]);
