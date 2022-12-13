@@ -93,24 +93,37 @@ export default function handler(req, res) {
       })
    })
 
-  // // Find food 
+//   // // Find food 
 
-  // const foods = gameState.board.food
+// const foods = gameState.board.food
 
-  // foods.map((food) => {
-  //   if (myHead.x === food.x - 1 ) {
-  //     return isMoveSafe.right = true
-  //   }
-  //   if (myHead.x === food.x + 1 ) {
-  //     return isMoveSafe.left = true
-  //   }
-  //   if (myHead.y === food.y - 1) {
-  //     return isMoveSafe.up = true
-  //   }
-  //   if (myHead.y === food.y + 1) {
-  //     return isMoveSafe.down = true
-  //   }
-  // })
+// foods.forEach((food) => {
+//   if (myHead.x === food.x - 1 ) {
+//      isMoveSafe.right = true
+//      isMoveSafe.left = false
+//      isMoveSafe.up = false
+//      isMoveSafe.down = false
+//   }
+//   if (myHead.x === food.x + 1 ) {
+//      isMoveSafe.left = true
+//      isMoveSafe.right = false
+//      isMoveSafe.up = false
+//      isMoveSafe.down = false
+//   }
+//   if (myHead.y === food.y - 1) {
+//      isMoveSafe.up = true
+//      isMoveSafe.right = false
+//      isMoveSafe.left = false
+//      isMoveSafe.down = false
+//   }
+//   if (myHead.y === food.y + 1) {
+//      isMoveSafe.down = true
+//      isMoveSafe.right = true
+//      isMoveSafe.left = false
+//      isMoveSafe.up = false
+//      isMoveSafe.down = false
+//   }
+// })
 
 
   // const findFood = (arr, headPos) => {
